@@ -30,6 +30,8 @@ from setuptools.command.install import install
 
 os.chdir(os.path.split(os.path.abspath(__file__))[0])
 
+# Try to get and update the version.
+# N.B. Similar code appears in docs/conf.py.
 PKG = "hy"
 VERSIONFILE = os.path.join(PKG, "version.py")
 try:
