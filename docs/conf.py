@@ -38,6 +38,9 @@ copyright = u'2013-%s, Paul Tagliamonte' % time.strftime('%Y')
 version = ".".join(hy_version.split(".")[:-1])
 # The full version, including alpha/beta/rc tags.
 release = hy_version
+hy_descriptive_version = cgi.escape(hy_version)
+if "+" in hy_version:
+    hy_descriptive_version += " <strong style='color: red;'>(unstable)</strong>"
 
 exclude_patterns = ['_build', 'coreteam.rst']
 
@@ -54,3 +57,6 @@ html_static_path = ['_static']
 
 html_use_smartypants = False
 html_show_sphinx = False
+
+html_context = dict(
+    hy_descriptive_version = hy_descriptive_version)
